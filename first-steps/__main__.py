@@ -35,3 +35,6 @@ bucket_object = s3.BucketObject(
     opts=pulumi.ResourceOptions(depends_on=[public_access_block]),
 )
 
+# Export the endpoint S3 object URL
+
+pulumi.export('bucket_endpoint', pulumi.Output.concat('http://', bucket.website_endpoint))
